@@ -1,0 +1,13 @@
+int* runningSum(int* nums, int numsSize, int* returnSize) {
+    int soma = 0;
+
+    *returnSize = numsSize;
+    int *vet = (int*) malloc(sizeof(int)* *returnSize);
+
+    for(int i = 0; i < *returnSize; i++){
+        soma = nums[i] + soma;
+        vet[i] = soma;
+    }
+
+    return vet;
+}
