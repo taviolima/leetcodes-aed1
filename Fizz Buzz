@@ -1,0 +1,26 @@
+char** fizzBuzz(int n, int* returnSize) {
+    char **answer = malloc(sizeof(char*) * n);
+
+    *returnSize = n;
+
+    for(int i = 0; i < n; i++){
+        int numero = i + 1;
+
+        if(numero % 3  == 0 && numero % 5 == 0){
+            answer[i] = "FizzBuzz";
+        }
+
+        else if(numero % 3 == 0){
+            answer[i] = "Fizz";
+        }
+
+        else if(numero % 5 == 0){
+            answer[i] = "Buzz";
+        }else{
+            answer[i] = malloc(12 * sizeof(char));
+            sprintf(answer[i], "%d", numero);
+        }
+    }
+
+    return answer;
+}
