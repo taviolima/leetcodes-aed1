@@ -1,0 +1,25 @@
+int* plusOne(int* digits, int digitsSize, int* returnSize) {
+    int tamanho = digitsSize;
+
+    int *ResVet = (int*) malloc((tamanho + 1) * sizeof(int));
+
+    for(int i = 0; i < tamanho; i++){
+        ResVet[i] = digits[i];
+    }
+
+    for(int i = (tamanho - 1); i >= 0; i--){
+        if(ResVet[i] < 9){
+            ResVet[i] = ResVet[i] + 1;
+            *returnSize = tamanho;
+            return ResVet;
+        }
+
+        ResVet[i] = 0;
+    }
+
+    ResVet[0] = 1;
+    ResVet[tamanho] = 0;
+
+    *returnSize = tamanho + 1;
+    return ResVet;
+}
