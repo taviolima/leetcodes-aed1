@@ -1,0 +1,17 @@
+int numTrees(int n) {
+    int soma = 0;
+
+    if (n == 0){
+        return 1;
+    }
+
+    if(n == 1){
+        return 1;
+    }
+
+    for(int i = 0; i < n; i++){
+        soma += numTrees(i) * numTrees(n - 1 - i);
+    }
+
+    return soma;
+}
